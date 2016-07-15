@@ -47,7 +47,7 @@
 			}(document, 'script', 'facebook-jssdk'));
 		</script>
 	  
-		<h1>Pumpiiiii</h1>
+		<h1 id="fb-welcome"></h1>
 	
 	</body>
 </html>
