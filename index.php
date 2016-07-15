@@ -24,11 +24,11 @@
 						  {"fields":"id,name,events{name,place,rsvp_status}"},
 						  function(response) {
 							  // Insert your code here
-								obj = JSON.parse(response);
-								alert(obj.count);
-								alert(obj.events.data[0]);
+								
+								alert(response.count);
+								alert(response.events.data[0]);
 								var welcomeBlock = document.getElementById('fb-welcome');
-								welcomeBlock.innerHTML = obj.events.data[0].name;
+								welcomeBlock.innerHTML = response.events.data[0].name;
 						  }
 						);
 						
