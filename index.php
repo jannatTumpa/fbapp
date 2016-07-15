@@ -24,10 +24,10 @@
 						  {"fields":"id,name,events{name,place,rsvp_status}"},
 						  function(response) {
 							  // Insert your code here
-								alert("Hello");
-								alert(response.events);
 								var welcomeBlock = document.getElementById('fb-welcome');
-								welcomeBlock.innerHTML = response.events;
+								var welcomeBlock2 = document.getElementById('fb-welcome2');
+								welcomeBlock.innerHTML = response;
+								welcomeBlock2.innerHTML = response.name;
 						  }
 						);
 						
@@ -62,6 +62,8 @@
 		</script>
 	  
 		<h1 id="fb-welcome"></h1>
+		<br>
+		<h1 id="fb-welcome2"></h1>
 	
 	</body>
 </html>
