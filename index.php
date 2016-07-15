@@ -25,6 +25,8 @@
 						  function(response) {
 							  // Insert your code here
 								obj = JSON.parse(response);
+								alert(obj.count);
+								alert(obj.events.data[0]);
 								var welcomeBlock = document.getElementById('fb-welcome');
 								welcomeBlock.innerHTML = obj.events.data[0].name;
 						  }
