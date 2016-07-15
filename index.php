@@ -17,10 +17,22 @@
 				// ADD ADDITIONAL FACEBOOK CODE HERE
 				function onLogin(response) {
 					if (response.status == 'connected') {
-						FB.api('/me?fields=first_name', function(data) {
+						
+						FB.api(
+						  '/me',
+						  'GET',
+						  {"fields":"id,name,events{name,place,rsvp_status}"},
+						  function(response) {
+							  // Insert your code here
+								var welcomeBlock = document.getElementById('fb-welcome');
+								welcomeBlock.innerHTML = response.name;
+						  }
+						);
+						
+						/* FB.api('/me?fields=first_name', function(data) {
 						var welcomeBlock = document.getElementById('fb-welcome');
 						welcomeBlock.innerHTML = 'Hello, ' + data.first_name + '!';
-						});
+						}); */
 					}
 				}
 
