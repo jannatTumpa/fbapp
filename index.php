@@ -24,9 +24,10 @@
 						  {"fields":"id,name,events{name,place,rsvp_status}"},
 						  function(response) {
 							  // Insert your code here
+								console.log(response);
 								var welcomeBlock = document.getElementById('fb-welcome');
 								var welcomeBlock2 = document.getElementById('fb-welcome2');
-								welcomeBlock.innerHTML = response["events"];
+								welcomeBlock.innerHTML = response.events;
 								welcomeBlock2.innerHTML = response.name;
 						  }
 						);
