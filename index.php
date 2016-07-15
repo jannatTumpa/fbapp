@@ -21,14 +21,17 @@
 						FB.api(
 						  '/me',
 						  'GET',
-						  {"fields":"id,name,events{name,place,rsvp_status}"},
+						  {"fields":"id,name,picture.type(large),cover"},
 						  function(response) {
 							  // Insert your code here
 								console.log(response);
-								var welcomeBlock = document.getElementById('fb-welcome');
-								var welcomeBlock2 = document.getElementById('fb-welcome2');
-								welcomeBlock.innerHTML = response.events;
-								welcomeBlock2.innerHTML = response.name;
+								var name = document.getElementById('name');
+								var pro = document.getElementById('pro');
+								var cover = document.getElementById('cover');
+								
+								name.innerHTML = response.name;
+								pro.src = response.picture.data.url;
+								cover.src = response.cover.source;
 						  }
 						);
 						
@@ -61,10 +64,12 @@
 				fjs.parentNode.insertBefore(js, fjs);
 			}(document, 'script', 'facebook-jssdk'));
 		</script>
-	  
-		<h1 id="fb-welcome"></h1>
+		
+		<img src="" alt="Smiley face" id="cover">
 		<br>
-		<h1 id="fb-welcome2"></h1>
+		<img src="" alt="Smiley face" id="pro">
+		<br>
+		<h1 id="name"></h1>
 	
 	</body>
 </html>
