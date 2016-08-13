@@ -70,6 +70,10 @@
 		<img src="" alt="Smiley face" id="pro">
 		<br>
 		<h1 id="name"></h1>
+		
+		<br>
+		
+		<p>Hi Riddhi</p>
 	
 	</body>
 </html>
